@@ -1,0 +1,9 @@
+{
+  // Cloudflare Worker for AI Puzzle Maker
+  "name": "ai-puzzle-maker-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-10-01",
+  "vars": {
+    "AI_PUZZLE_MAKER__GEMINI_BASE_URL": "https://generativelanguage.googleapis.com"
+  }
+}
