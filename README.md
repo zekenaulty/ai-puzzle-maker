@@ -1,6 +1,6 @@
 # AI Jigsaw Puzzle Maker
 
-Create, generate, and solve custom AI-powered jigsaw puzzles. The web app lets you craft image prompts or pick curated styles, automatically generates puzzle-ready artwork, cuts it into premium interlocking pieces, and stores everything locally so you can build a library, resume progress, and tune play settings. The companion Cloudflare Worker handles safe prompt composition and image generation so your API key never touches the browser.
+Create, generate, and solve custom AI-powered jigsaw puzzles. The web app lets you craft image prompts or pick curated styles, automatically generates puzzle-ready artwork, cuts it into premium interlocking pieces, and stores everything locally so you can build a library, resume progress, and tune play settings. The companion Cloudflare Worker handles safe prompt composition and image generation so your API key never touches the browser. Built by Zeke Naulty partnering with GPT-5.1-Codex-Max as the coding copilot.
 
 ## Structure
 - apps/web: React 18 + Vite + MUI
