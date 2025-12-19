@@ -38,3 +38,7 @@ test-results
 # Misc
 .wrangler/tmp
 *.local
+workers/api/.wrangler/tmp/bundle-xZtQC3/middleware-insertion-facade.js
+workers/api/.wrangler/tmp/bundle-xZtQC3/middleware-loader.entry.ts
+workers/api/.wrangler/tmp/dev-kBC8g9/index.js
+workers/api/.wrangler/tmp/dev-kBC8g9/index.js.map
