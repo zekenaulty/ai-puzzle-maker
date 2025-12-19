@@ -101,7 +101,7 @@ function resolveTopEdge(row: number, col: number, maps: { horizontal: Map<string
     return outerEdge('H')
   }
 
-  return seamEdge(seam, invertSign(seam.tab.sign))
+  return seamEdge(seam, seam.tab.sign)
 }
 
 function resolveRightEdge(
@@ -150,7 +150,7 @@ function resolveLeftEdge(row: number, col: number, maps: { vertical: Map<string,
     return outerEdge('V')
   }
 
-  return seamEdge(seam, invertSign(seam.tab.sign))
+  return seamEdge(seam, seam.tab.sign)
 }
 
 function outerEdge(orientation: 'H' | 'V'): EdgeSpec {

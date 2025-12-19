@@ -107,7 +107,13 @@ function sampleSeamPoints(seam: Seam, edgeSign: 1 | -1, cols: number, samples: n
     const tangent = cubicBezierTangent(seam.p0, seam.p1, seam.p2, seam.p3, t)
     const normalToB = getNormalToB(seam.orientation, tangent)
     const bump = knobProfile(t, seam.tab.centerT, seam.tab.width)
-    const wave = Math.sin((t + phase) * Math.PI * 2) * seam.jitter * 0.35
+    const endFade = smoothstep(0, 0.12, t) * smoothstep(0, 0.12, 1 - t)
+    const wave =
+      Math.sin((t + phase) * Math.PI * 2) *
+      seam.jitter *
+      0.35 *
+      endFade *
+      (0.2 + 0.8 * bump)
     const amount = seam.tab.amplitude * bump + wave
     const offset = scaleVec(normalToB, -edgeSign * amount)
     points.push({
@@ -116,7 +122,16 @@ function sampleSeamPoints(seam: Seam, edgeSign: 1 | -1, cols: number, samples: n
     })
   }
 
+  if (points.length > 0) {
+    points[0] = { x: origin.x + seam.p0.x, y: origin.y + seam.p0.y }
+    points[points.length - 1] = { x: origin.x + seam.p3.x, y: origin.y + seam.p3.y }
+  }
   return points
+}
+
+function smoothstep(edge0: number, edge1: number, x: number): number {
+  const t = Math.max(0, Math.min(1, (x - edge0) / (edge1 - edge0)))
+  return t * t * (3 - 2 * t)
 }
 
 function cubicBezierPoint(p0: Vec2, p1: Vec2, p2: Vec2, p3: Vec2, t: number): Vec2 {

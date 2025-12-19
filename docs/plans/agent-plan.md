@@ -43,6 +43,7 @@ Turn log:
 - T024: Started S24 polish. Moved puzzle HUD/controls off the board, constrained scatter/drag to board bounds, reduced out-of-bounds scatter, and removed the duplicate Create button on Library.
 - T025: Continued S24. Enlarged workspace padding to use the whole play area, squared the play container edges to prevent clipping, and recentered the initial view when container size is known.
 - T026: Continued S24. Padding now scales to the visible play container so pieces can move across the full parent area (eliminating dead space).
+- T027: Continued S24. Fixed shared seam orientation and endpoint drift so piece edges align pixel-perfectly; reduced wave at corners.
 
 Status keys: Planned | In Progress | Blocked | Done
 
